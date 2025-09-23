@@ -10,6 +10,10 @@
 
 HyperLiquid Copy Trader is a sophisticated copy trading application designed for the HyperLiquid decentralized exchange. It provides automated position and order replication with intelligent entry strategies, proportional sizing, and comprehensive risk management features.
 
+### Contact
+
+- If you need help or question with this repo, please contact me via [Telegram](https://t.me/mooneagle1_1)
+
 ### ✨ Key Features
 
 - **🎯 Dual Trading Modes**: Position-based and order-based copy trading strategies
@@ -45,8 +49,8 @@ HyperLiquid Copy Trader is a sophisticated copy trading application designed for
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/lucyCooked/hyperliquid-copytrader.git
-   cd hyperliquid-copytrader
+   git clone https://github.com/michalstefanow/hyperliquid-trading-copytrading.git
+   cd hyperliquid-trading-copytrading
    ```
 
 2. **Install dependencies**
@@ -63,8 +67,8 @@ HyperLiquid Copy Trader is a sophisticated copy trading application designed for
 
 Pre-built binaries are available for major platforms:
 
-- **macOS**: [Download Latest Release](https://github.com/lucyCooked/hyperliquid-copytrader/releases)
-- **Windows**: [Download Latest Release](https://github.com/lucyCooked/hyperliquid-copytrader/releases)
+- **macOS**: [Download Latest Release](https://github.com/michalstefanow/hyperliquid-trading-copytrading/releases)
+- **Windows**: [Download Latest Release](https://github.com/michalstefanow/hyperliquid-trading-copytrading/releases)
 - **Linux**: Use source installation or build from source
 
 ## 🚀 Quick Start
@@ -309,6 +313,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for the DeFi community**
 
-[⭐ Star this repo](https://github.com/lucyCooked/hyperliquid-copytrader) if you find it helpful!
+[⭐ Star this repo](https://github.com/michalstefanow/hyperliquid-trading-copytrading) if you find it helpful!
 
 </div>
