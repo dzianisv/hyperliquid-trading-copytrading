@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: hyperliquid-bot
+  namespace: default
+spec:
+  serviceName: "hyperliquid-bot"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hyperliquid-bot
+  template:
+    metadata:
+      labels:
+        app: hyperliquid-bot
+    spec:
+      containers:
+      - name: bot
+        image: ghcr.io/dzianisv/hyperliquid-trading-copytrading:latest
+        imagePullPolicy: Always
+        env:
+        - name: BOT_TYPE
+          valueFrom:
+            configMapKeyRef:
+              name: hyperliquid-bot-config
+              key: BOT_TYPE
+        - name: LEVERAGE
+          valueFrom:
+            configMapKeyRef:
+              name: hyperliquid-bot-config
+              key: LEVERAGE
+        - name: TRADE_LIMIT
+          valueFrom:
+            configMapKeyRef:
+              name: hyperliquid-bot-config
+              key: TRADE_LIMIT
+        - name: MINI_ALLOC_OF_PF
+          valueFrom:
+            configMapKeyRef:
+              name: hyperliquid-bot-config
+              key: MINI_ALLOC_OF_PF
+        - name: PRIVATE_KEY_API
+          valueFrom:
+            secretKeyRef:
+              name: hyperliquid-bot-secrets
+              key: PRIVATE_KEY_API
+        - name: ACCOUNT_TO_COPY
+          valueFrom:
+            secretKeyRef:
+              name: hyperliquid-bot-secrets
+              key: ACCOUNT_TO_COPY
+        - name: TRADING_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: hyperliquid-bot-secrets
+              key: TRADING_ADDRESS
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          exec:
+            command:
+            - pgrep
+            - -f
+            - bot_runner.py
+          initialDelaySeconds: 30
+          periodSeconds: 60
+        restartPolicy: Always
+      imagePullSecrets:
+      - name: ghcr-secret

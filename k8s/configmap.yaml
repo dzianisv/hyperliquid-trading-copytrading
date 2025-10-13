@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hyperliquid-bot-config
+  namespace: default
+data:
+  BOT_TYPE: "position"
+  LEVERAGE: "1.0"
+  TRADE_LIMIT: "10.0"
+  MINI_ALLOC_OF_PF: "0.0"
